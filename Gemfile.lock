@@ -8,8 +8,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
-    autoprefixer-rails (5.0.0.1)
+    autoprefixer-rails (5.0.0.3)
       execjs
+      json
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.3)
@@ -94,6 +95,9 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.5-x64-mingw32)
       mini_portile (~> 0.6.0)
+    normalize-scss (3.0.2)
+      compass-core (~> 1.0, >= 1.0.0)
+      sass (~> 3.3, >= 3.3.0)
     padrino-helpers (0.12.4)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.12.4)
@@ -111,6 +115,8 @@ GEM
     sass (3.4.10)
     sass-media_query_combiner (0.0.6)
       sass (>= 3.2.0)
+    scut (1.1.0)
+      sass (~> 3.2, >= 3.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -148,6 +154,8 @@ DEPENDENCIES
   middleman-blog
   middleman-livereload
   nokogiri
+  normalize-scss
+  scut
   sprockets-media_query_combiner
   tzinfo-data
   wdm (>= 0.1.0)

@@ -1,0 +1,28 @@
+---
+title: Jurnal Aris FM &ndash; Mengabadikan Cerita
+pageable: true
+per_page: 5
+---
+
+.container
+  - page_articles.each_with_index do |article|
+    %article.post
+      .post__meta
+        %time.post__time{datetime: article.date.strftime('%Y-%m-%d')}= article.date.strftime('%e %B %Y')
+        %span.post__tags
+          &mdash; Topik:
+          = article.tags.map { |tag| link_to tag, tag_path(tag) }.join(', ')
+      %h1.post__title= link_to article.title, article, class: 'post__title-link'
+      / .post__title-end &mdash;
+      .post__entry
+        / = article.body
+        = article.summary(300)
+        %p= link_to 'Selengkapnya &rarr;', article, class: 'post__more-link'
+
+
+  - if paginate
+    .page-nav
+      - if prev_page
+        = link_to '&larr; Halaman Sebelumnya', prev_page, class: 'page-nav__link page-nav__link--prev'
+      - if next_page
+        = link_to 'Halaman Selanjutnya &rarr;', next_page, class: 'page-nav__link page-nav__link--next'

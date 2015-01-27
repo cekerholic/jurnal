@@ -1,0 +1,69 @@
+// @MEDIA-QUERY BREAKPOINTS
+//  ==================================================================
+$desktop:       pem(1200);
+
+$tablet-max:    pem($desktop - 1);
+$tablet:        pem(980);
+
+$phablet-max:   pem($tablet - 1);
+$phablet:       pem(640);
+
+$phone-max:     pem($phablet - 1);
+$phone:         pem(480);
+
+$phone-sm-max:  pem($phone - 1);
+$phone-sm:      pem(320);
+
+
+
+// @MEDIA-QUERY MIXIN
+//  ==================================================================
+@mixin respond($media: true, $query-width-min: false, $query-width-max: false) {
+
+  // Rule: min-width (applied to the predetermined viewport and higher)
+  @if $media == dekstop {
+    @media (min-width: $desktop) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tablet) { @content; }
+  }
+  @else if $media == phablet {
+    @media (min-width: $phablet) { @content; }
+  }
+  @else if $media == phone {
+    @media (min-width: $phone) { @content; }
+  }
+  @else if $media == phone-sm {
+    @media (min-width: $phone-sm) { @content; }
+  }
+
+  // Rule: max-width (applied to the predetermined viewport and lower)
+  @else if $media == tablet-max {
+    @media (max-width: $tablet-max) { @content; }
+  }
+  @else if $media == phablet-max {
+    @media (max-width: $phablet-max) { @content; }
+  }
+  @else if $media == phone-max {
+    @media (max-width: $phone-max) { @content; }
+  }
+  @else if $media == phone-sm-max {
+    @media (max-width: $phone-sm-max) { @content; }
+  }
+
+  // Visibility utilities (applied only to the predetermined viewport)
+  @else if $media == only-tablet {
+    @media (min-width: $tablet) and (max-width: $tablet-max) { @content; }
+  }
+  @else if $media == only-phablet {
+    @media (min-width: $phablet) and (max-width: $phablet-max) { @content; }
+  }
+  @else if $media == only-phone {
+    @media (min-width: $phone) and (max-width: $phone-max) { @content; }
+  }
+
+  // Global media query mixin
+  @else if not $media {
+    @media (min-width: $query-width-min) and (max-width: $query-width-max) { @content; }
+  }
+}

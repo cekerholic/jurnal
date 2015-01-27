@@ -4,12 +4,14 @@
 Time.zone = 'Jakarta'
 activate :blog do |blog|
   blog.permalink = ':title'
-  blog.sources = 'posts/:year-:month-:day-:title'
+  blog.sources = 'articles/:year-:month-:day-:title'
   blog.layout = 'article'
-  blog.default_extension = '.md.erb'
+  blog.default_extension = '.md'
   blog.paginate = true
   blog.per_page = 5
   blog.page_link = ':num'
+  blog.tag_template = "tag.html"
+  blog.taglink = "topik/{tag}.html"
 end
 
 ###
@@ -18,13 +20,9 @@ end
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/img'
+set :fonts_dir, 'assets/fonts'
 set :layouts_dir, 'assets/templates/layouts'
 set :partials_dir, 'assets/templates/components'
-
-###
-# pretty URLs
-###
-activate :directory_indexes
 
 ###
 # HAML Setting
@@ -39,6 +37,16 @@ set :haml, {
 # sass-media_query_combiner
 ###
 require 'sass-media_query_combiner'
+
+###
+# Normalize.css
+###
+require 'normalize-scss'
+
+###
+# Scut
+###
+require 'scut'
 
 ###
 # Autoprefixer
@@ -61,17 +69,9 @@ end
 # Build Settings
 ###
 configure :build do
+  set :relative_links, true
   activate :minify_css
   activate :minify_javascript
-  activate :relative_assets
+  activate :directory_indexes
+  activate :gzip
 end
-
-###
-#Deploy Settings
-###
-# activate :deploy do |deploy|
-#   deploy.method = :git
-#   deploy.branch = "master" # default: gh-pages
-#   deploy.build_before = true
-#   deploy.remote = "custom-remote" # remote name or git url, default: origin
-# end

@@ -1,0 +1,9 @@
+.colophon {
+  font-size: pem(14);
+  padding-bottom: pem(30);
+  text-align: center;
+
+  &__link {
+    font-weight: bold;
+  }
+}

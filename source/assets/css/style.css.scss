@@ -1,0 +1,105 @@
+/*  ************************** <<< || >>> **************************** *\
+    ==================================================================
+
+      name:           Jurnal Aris FM
+      version:        0.1.0
+      codename:       pagi
+      description:    Mengabadikan Cerita
+      date created:   Sun, Jan 25th 2015
+      date modified:  Sun, Jan 25th 2015
+      license:        MIT
+      license-url:    http://opensource.org/licenses/MIT
+
+    ==================================================================
+\*  ************************** <<< || >>> **************************** */
+
+/**
+  *
+  *
+  *
+  *
+*/
+
+//
+  // Table of Content:
+  // 1.  Dependencies
+  //     a. Compass
+  //     b. Normalize
+  //     c. Scut
+  // 2.  Helpers (variables, mixins & placeholders)
+  //     a. Variable
+  //     b. Functions
+  //     c. Mixins Typography
+  //     d. Mixins Media Query
+  //     e. Placeholders
+  // 3.  Global Styles
+  //     a. Typography
+  //     b. Scaffolding
+  //     c. Global classes
+  // 4.  UI Comps
+  //     a. Branding and Navigation
+  //     b. Post-view
+//
+
+//  1. Dependencies
+//  ==================================================================
+    // a. Compass
+    @import "compass";
+
+    // b. Normalize
+    @import "normalize";
+
+    // c. Scut
+    @import "scut";
+
+
+
+//  2. Helpers
+//  ==================================================================
+    // a. SASS Variables
+    @import "helpers/helpers.vars";
+
+    // b. SASS Functions
+    @import "helpers/helpers.functions";
+
+    // c. Typography
+    @import "helpers/helpers.typography";
+
+    // d. Media Queries
+    @import "helpers/helpers.media-query";
+
+    // e. Placeholders
+    @import "helpers/helpers.placeholders";
+
+
+
+//  3. Global Styles
+//  ==================================================================
+    // a. Typography
+    @import "global/global.typography";
+
+    // b. Scaffolding
+    @import "global/global.scaffolding";
+
+    // c. Global Classes
+    @import "global/global.classes";
+
+    // d. Grid System
+    @import "global/global.grid";
+
+
+
+//  4. UI Comps
+//  ==================================================================
+    // a. Branding & Navigation
+    @import "comps/branding";
+
+    // b. Post
+    @import "comps/post";
+
+    // c. Footer
+    @import "comps/footer";
+
+
+
+

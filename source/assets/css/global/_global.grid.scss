@@ -1,0 +1,93 @@
+// VARIABLES
+//  ==================================================================
+// columns number
+$default-column-number:     4;
+
+// gutter width
+$default-gutter-width:      30;
+
+// container width
+$container-width:           610;
+$container-width-larger:    960;
+$container-width-largest:   1200;
+
+
+
+// GRID
+//  ==================================================================
+// Float grid only when on their respective viewport
+%float-phone {
+  @include respond(phone-sm) { float: left; }
+}
+
+%float-phablet {
+  @include respond(phablet) { float: left; }
+}
+
+%float-tablet {
+  @include respond(tablet) { float: left; }
+}
+
+// Gutter need to be divided. One for left padding, and one for right padding.
+$gutter-width : pem($default-gutter-width/2);
+
+// centering page horizontally
+.container {
+  @extend %clearfix;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+
+  @include respond(phablet) {
+    width: pem($container-width);
+  }
+  @include respond(tablet) {
+    width: pem($container-width-larger);
+  }
+  @include respond(dekstop) {
+    width: pem($container-width-largest);
+  }
+}
+
+// grid wrapper
+.row {
+  @extend %clearfix;
+  margin-left: -$gutter-width;
+  margin-right: -$gutter-width;
+}
+
+[class*="grid-"] {
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+}
+
+@for $i from 1 through $default-column-number {
+
+  .grid-phone-#{$i}of#{$default-column-number} {
+    @extend %float-phone;
+
+    @include respond(phone-sm) {
+      min-height: 1px;
+      width: ($i/$default-column-number)*100%;
+    }
+  }
+
+  .grid-tablet-#{$i}of#{$default-column-number} {
+    @extend %float-phablet;
+
+    @include respond(phablet) {
+      min-height: 1px;
+      width: ($i/$default-column-number)*100%;
+    }
+  }
+
+  .grid-desktop-#{$i}of#{$default-column-number} {
+    @extend %float-tablet;
+
+    @include respond(tablet) {
+      min-height: 1px;
+      width: ($i/$default-column-number)*100%;
+    }
+  }
+}

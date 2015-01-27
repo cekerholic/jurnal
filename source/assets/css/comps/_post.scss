@@ -1,0 +1,79 @@
+.post {
+  max-width: pem(730);
+  margin: pem(60) auto;
+
+  &__meta {
+    color: $silver;
+    font-size: pem(14);
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__title-end {
+    @extend h1;
+    color: $silver;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__entry {
+    @extend %clearfix;
+    border-bottom: 2px solid $def-border;
+    padding-bottom: pem(60);
+
+    a {
+      @include link($link, $link);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__nav {
+    border-bottom: 2px solid $def-border;
+    color: $silver;
+    padding-top: pem(60);
+    padding-bottom: pem(60);
+  }
+
+  &__nav-post {
+    font-weight: bold;
+    font-size: pem(21);
+    line-height: 1;
+  }
+
+  &__comments {
+    border-bottom: 2px solid $def-border;
+    padding-top: pem(60);
+    padding-bottom: pem(60);
+    margin-bottom: pem(60);
+  }
+}
+
+.page-nav {
+  @extend %clearfix;
+  max-width: pem(730);
+
+  &__link--next {
+    float: left;
+    margin: pem(60) auto;
+  }
+
+  &__link--next {
+    float: right;
+  }
+}
+
+.archive-title {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid $def-border;
+  color: $silver;
+  font-weight: bold;
+  padding: pem(10) 0;
+  text-align: center;
+}

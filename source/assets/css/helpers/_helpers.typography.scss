@@ -1,0 +1,94 @@
+// VARIABLES
+//  ==================================================================
+// Default font-stack
+$sans:      "Franklin Gothic", Helvetica, Arial, sans-serif;
+$serif:     Cambria, Georgia, serif;
+$mono:      Consolas, "Lucida Console", "Courier New", Courier, monospace;
+
+// fonts-path for @font-face
+$font-path: "../fonts";
+
+// Body font
+// Reference: http://compass-style.org/reference/compass/typography/vertical_rhythm/
+$base-font-size:        16;
+$base-line-height:      30;
+
+// Headings font
+$font-size-h1:          30;
+$leading-h1:            .75;
+$font-size-h2:          24;
+$leading-h2:            1;
+$font-size-h3:          20;
+$leading-h3:            1;
+
+// Blockquote
+$font-size-blockquote:  24;
+
+
+
+// MIXINS
+//  ==================================================================
+@mixin font-face(
+  $family, // font-family
+  $font-file, // font-filename. Just define font filename (without extension/path)
+  $style: normal, //font-style
+  $weight: normal // font-weight
+  ) {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src:
+      url('#{$font-path}/#{$font-file}.woff') format('woff');
+  }
+}
+
+@include font-face("Franklin Gothic", "FranklinGothic-Book-webfont");
+@include font-face("Franklin Gothic", "FranklinGothic-BookIt-webfont", italic);
+@include font-face("Franklin Gothic", "FranklinGothic-Demi-webfont", normal, bold);
+@include font-face("Franklin Gothic", "FranklinGothic-DemiIt-webfont", italic, bold);
+
+// Sans-serif
+%sans { font-family: $sans; }
+@mixin sans { @extend %sans; }
+
+// Serif
+%serif { font-family: $serif; }
+@mixin serif { @extend %serif; }
+
+// Monospace
+%mono { font-family: $mono; }
+@mixin mono { @extend %mono; }
+
+// Link color
+@mixin link(
+  $link-col: $link,
+  $link-hover: false,
+  $link-active: false
+  ) {
+  color: $link-col;
+
+  @if not $link-hover and not $link-active {
+    &:hover, &:active  {
+      color: darken($link-col, 10%);
+    }
+  }
+  @if $link-hover and not $link-active {
+    &:hover, &:active {
+      color: $link-hover;
+    }
+  }
+  @if not $link-hover and $link-active {
+    &:active {
+      color: $link-active;
+    }
+  }
+  @if $link-hover and $link-active {
+    &:hover {
+      color: $link-hover;
+    }
+    &:active {
+      color: $link-active;
+    }
+  }
+}

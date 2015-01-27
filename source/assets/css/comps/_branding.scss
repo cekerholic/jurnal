@@ -1,0 +1,17 @@
+.top {
+  border-bottom: 1px solid $def-border;
+  padding: pem(30) 0;
+  text-align: center;
+
+  &__branding {
+    font-size: pem(36);
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__tagline {
+    color: $silver;
+    line-height: 1.25;
+  }
+}
