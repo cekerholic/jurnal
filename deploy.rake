@@ -9,7 +9,7 @@ task :deploy do
   p "## Deploying to Github Pages"
   cd "build" do
     system "git add -A"
-    message = "Site updated at #{Time.now.utc}"
+    message = "Jurnal diperbarui pada tanggal #{Time.now}"
     p "## Commiting: #{message}"
     system "git commit -m \"#{message}\""
     p "## Pushing generated website"

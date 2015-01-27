@@ -21,7 +21,6 @@ set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/img'
 set :fonts_dir, 'assets/fonts'
-set :layouts_dir, 'assets/templates/layouts'
 set :partials_dir, 'assets/templates/components'
 
 ###
@@ -69,8 +68,12 @@ end
 # Build Settings
 ###
 configure :build do
+  compass_config do |compass|
+    compass.line_comments = false
+  end
   set :relative_links, true
-  activate :minify_css
+  activate :relative_assets
+  # activate :minify_css
   activate :minify_javascript
   activate :directory_indexes
   activate :gzip
