@@ -1,3 +1,1 @@
-###What Is Smoking Ninja?
-
-Smoking Ninja is my personal blog for creating snippets
+# Jurnal Aris FM, sebuah blog pribadi
