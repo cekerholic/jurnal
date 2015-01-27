@@ -9,7 +9,7 @@
         %p.post__meta
           %time.post__time{datetime: current_article.date.strftime('%Y-%m-%d')}= current_article.date.strftime('%e %b %Y')
           %span.post__tags
-            &mdash; Tagged with:
+            &mdash; Topik:
             = current_article.tags.map { |tag| link_to tag, tag_path(tag) }.join(', ')
         %h1.post__title= current_article.title
         .post__entry= yield
