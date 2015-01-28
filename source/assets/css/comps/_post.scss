@@ -32,6 +32,17 @@
         text-decoration: underline;
       }
     }
+
+  }
+  &__img {
+    color: $silver;
+    font-size: pem(14);
+    margin: pem(40) pem(-40);
+    text-align: center;
+
+    img {
+      margin-bottom: pem(7);
+    }
   }
 
   &__nav {

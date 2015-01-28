@@ -31,3 +31,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
+img {
+  max-width: 100%;
+}

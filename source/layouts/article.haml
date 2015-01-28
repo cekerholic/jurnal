@@ -17,18 +17,19 @@ layout: false
             = current_article.tags.map { |tag| link_to tag, tag_path(tag) }.join(', ')
         %h1.post__title= current_article.title
         .post__entry= yield
-        /
-          .post__nav
-            .post__nav-item
-              - prev_article = current_article.previous_article
-              - if prev_article
-                .post__nav-label Previous Post:
-                = link_to prev_article.title, '..' + prev_article.url, class: 'post__nav-post'
-            .post__nav-item
-              - next_article = current_article.next_article
-              - if next_article
-                .post__nav-label Next Post:
-                = link_to next_article.title, '..' + next_article.url, class: 'post__nav-post'
+
+        .post__nav
+          .post__nav-item
+            - prev_article = current_article.previous_article
+            - if prev_article
+              .post__nav-label Previous Post:
+              = link_to prev_article.title, '..' + prev_article.url, class: 'post__nav-post'
+          .post__nav-item
+            - next_article = current_article.next_article
+            - if next_article
+              .post__nav-label Next Post:
+              = link_to next_article.title, '..' + next_article.url, class: 'post__nav-post'
+
         .post__comments= partial('disqus')
 
       = partial('footer')
