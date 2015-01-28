@@ -676,6 +676,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased; }
 
+img {
+  max-width: 100%; }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -726,6 +729,13 @@ body {
         color: #e51c23; }
       .post__entry a:hover {
         text-decoration: underline; }
+  .post__img {
+    color: #979797;
+    font-size: 0.875em;
+    margin: 2.5em -2.5em;
+    text-align: center; }
+    .post__img img {
+      margin-bottom: 0.4375em; }
   .post__nav {
     border-bottom: 2px solid #eee;
     color: #979797;
