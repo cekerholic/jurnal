@@ -568,7 +568,7 @@ small {
 
 .h1, h1, .post__title-end {
   font-size: 1.875em;
-  line-height: 1.40625em; }
+  line-height: 1.21875em; }
 
 .h2, h2 {
   font-size: 1.5em;
@@ -706,6 +706,13 @@ img {
     color: #979797;
     line-height: 1.25; }
 
+.post-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12.5em;
+  margin-bottom: -1.875em; }
+  
 .post {
   max-width: 45.625em;
   margin: 3.75em auto; }
@@ -731,11 +738,12 @@ img {
         text-decoration: underline; }
   .post__img {
     color: #979797;
-    font-size: 0.875em;
-    margin: 2.5em -2.5em;
+    margin: 1.875em -0.9375em;
     text-align: center; }
-    .post__img img {
-      margin-bottom: 0.4375em; }
+        .post__img p {
+      margin-bottom: 0; }
+    .post__img figcaption {
+      font-size: 0.875em; }
   .post__nav {
     border-bottom: 2px solid #eee;
     color: #979797;
@@ -794,7 +802,7 @@ img {
     min-height: 1px;
     width: 100%; } }
 
-@media (min-width: 40em) {
+@media (min-width: 41.25em) {
   .grid-tablet-1of4, .grid-tablet-2of4, .grid-tablet-3of4, .grid-tablet-4of4 {
     float: left; } 
     .container {
@@ -810,7 +818,12 @@ img {
     width: 75%; } 
   .grid-tablet-4of4 {
     min-height: 1px;
-    width: 100%; } }
+    width: 100%; } 
+    .post-cover {
+      height: 31.25em; } 
+      .post__img {
+        margin-left: -1.875em;
+        margin-right: -1.875em; } }
 
 @media (min-width: 61.25em) {
   .grid-desktop-1of4, .grid-desktop-2of4, .grid-desktop-3of4, .grid-desktop-4of4 {
