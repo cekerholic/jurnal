@@ -552,7 +552,7 @@ samp {
 p {
   font-size: 1.125em;
   line-height: 1.66667;
-  margin: 0 0 0.625em; }
+  margin: 0 0 1.25em; }
   p:last-child {
     margin-bottom: 0; }
   
@@ -614,22 +614,28 @@ dd {
   margin-left: 0; }
 
 blockquote {
-  color: #979797;
-  margin: 0 0 0.9375em;
+  margin: 0 0 1.875em;
   padding: 0 1.875em; }
   blockquote p {
     font-size: 1.5em;
     font-style: italic;
-    line-height: 1.40625em;
+    line-height: 0.9375em;
     margin-bottom: 0.9375em; }
     blockquote p:last-child {
       margin-bottom: 0; }
-    blockquote p:before {
-      content: "“"; }
-    blockquote p:after {
-      content: "”"; }
+    blockquote p > span {
+      font-weight: bold; }
+      blockquote p > span:before, blockquote p > span:after {
+        font-style: normal;
+        font-size: 175%;
+        position: relative;
+        top: 0.3125em; }
+      blockquote p > span:before {
+        content: "“"; }
+      blockquote p > span:after {
+        content: "”"; }
   blockquote cite {
-    font-size: 0.625em;
+    font-size: 0.5625em;
     font-style: normal;
     line-height: 1.875em; }
     blockquote cite:before {
