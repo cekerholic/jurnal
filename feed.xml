@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Jurnal Aris FM</title>
-  <subtitle>Jurnal Aris FM &amp;ndash; Mengabadikan Cerita</subtitle>
+  <subtitle>Jurnal Aris FM &amp;ndash; Cerita dan Opini</subtitle>
   <id>http://jurnal.cekerholic.com/</id>
   <link href="http://jurnal.cekerholic.com/"/>
   <link href="http://jurnal.cekerholic.com/feed.xml" rel="self"/>
@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/carpe-diem/"/>
     <id>http://jurnal.cekerholic.com/carpe-diem/</id>
     <published>2015-01-31T15:40:00+07:00</published>
-    <updated>2015-01-31T15:57:34+07:00</updated>
+    <updated>2015-02-03T10:48:14+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -43,7 +43,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/"/>
     <id>http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/</id>
     <published>2015-01-28T20:23:00+07:00</published>
-    <updated>2015-01-29T00:50:10+07:00</updated>
+    <updated>2015-01-29T10:00:34+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -85,7 +85,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/halo-semuanya/"/>
     <id>http://jurnal.cekerholic.com/halo-semuanya/</id>
     <published>2015-01-27T21:18:00+07:00</published>
-    <updated>2015-01-27T23:18:59+07:00</updated>
+    <updated>2015-01-29T10:00:34+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
