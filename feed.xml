@@ -5,22 +5,111 @@
   <id>http://jurnal.cekerholic.com/</id>
   <link href="http://jurnal.cekerholic.com/"/>
   <link href="http://jurnal.cekerholic.com/feed.xml" rel="self"/>
-  <updated>2015-01-31T15:40:00+07:00</updated>
+  <updated>2015-06-22T01:01:00+07:00</updated>
   <author>
     <name>Aris FM</name>
   </author>
+  <entry>
+    <title>Responsive Images: Serve Images Based on Viewport Size</title>
+    <link rel="alternate" href="http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/"/>
+    <id>http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/</id>
+    <published>2015-06-22T01:01:00+07:00</published>
+    <updated>2015-06-22T01:02:00+07:00</updated>
+    <author>
+      <name>Aris FM</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;em&gt;Sebenarnya pengen membuat judul dalam Bahasa Indonesia tapi kok gimana gitu. Yawdah akhirnya pake &lt;em&gt;English&lt;/em&gt; aja, &lt;em&gt;tur&lt;/em&gt; biar agak keren.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Belakangan ini saya sedang belajar untuk optimisasi performa situs, terutama di &lt;em&gt;mobile&lt;/em&gt;. Hal ini didasari dari pengamatan pribadi saya, banyak sekali situs yang masih belum optimal di &lt;em&gt;mobile&lt;/em&gt;, terutama &lt;em&gt;loading speed&lt;/em&gt;-nya (baca: lemot). Apalagi koneksi internet seluler di Indonesia masih &lt;em&gt;bosok&lt;/em&gt;, sinyal boleh H+ tapi speednya &lt;em&gt;Hajingan+&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Kali ini saya akan sedikit berbagi tentang optimisasi &lt;em&gt;images&lt;/em&gt;. Kenapa &lt;em&gt;images&lt;/em&gt;? &lt;em&gt;images&lt;/em&gt; adalah salah satu elemen yang paling banyak memakan &lt;em&gt;bandwith&lt;/em&gt; karena ukuran berkasnya yang relatif besar. Seperti dijelaskan oleh Ilya Grigorik di &lt;a href="https://developers.google.com/web/fundamentals/?hl=en"&gt;Google Web Fundamentals&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;span&gt;Images often account for most of the downloaded bytes on a web page and also often occupy a significant amount of visual space.&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jadi optimisasi &lt;em&gt;images&lt;/em&gt; itu wajib hukumnya untuk sebuah situs, apalagi jika situs itu memang menampilkan banyak &lt;em&gt;images&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="tentang-responsive-images"&gt;Tentang &lt;em&gt;Responsive Images&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Responsive Images&lt;/em&gt; adalah sebuah teknik untuk menampilkan &lt;em&gt;image&lt;/em&gt; sesuai ukuran &lt;em&gt;viewport&lt;/em&gt;. Jadi situs menyediakan &lt;em&gt;image&lt;/em&gt; dengan beberapa ukuran yang berbeda, lalu menampilkan &lt;em&gt;image&lt;/em&gt; yang sesuai dengan ukuran &lt;em&gt;viewport&lt;/em&gt; dari &lt;em&gt;device&lt;/em&gt; yang mengaksesnya.&lt;/p&gt;
+
+&lt;p&gt;Teknik ini sebenarnya sudah mulai diproposalkan untuk dijadikan HTML element, yaitu &lt;code&gt;&amp;lt;picture&amp;gt;&lt;/code&gt; element, tetapi statusnya sampai sekarang masih &lt;a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element"&gt;&lt;em&gt;draft&lt;/em&gt;&lt;/a&gt; dan dukungan &lt;a href="http://caniuse.com/#feat=picture"&gt;&lt;em&gt;browser&lt;/em&gt;&lt;/a&gt; pun masih sangat minim. Jadi untuk tulisan ini saya akan menggunakan Javascript untuk membuat &lt;em&gt;responsive images&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Saya akan memberikan sedikit contoh sederhana tentang &lt;em&gt;responsive images&lt;/em&gt;. Misalnya 3 orang user membuka sebuah situs dengan gadget yang berbeda-beda:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;User A mengakses situs dari iPhone&lt;/li&gt;
+  &lt;li&gt;User B mengakses situs dari iPad&lt;/li&gt;
+  &lt;li&gt;User C mengakses situs dari laptop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Maka situs akan menampilkan &lt;em&gt;image&lt;/em&gt; yang berbeda untuk setiap user:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Di gadget User A &lt;em&gt;image&lt;/em&gt; yang dimuat adalah &lt;code&gt;image.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Di gadget User B &lt;em&gt;image&lt;/em&gt; yang dimuat ukuran &lt;code&gt;image-medium.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Di gadget User C &lt;em&gt;image&lt;/em&gt; yang dimuat ukuran &lt;code&gt;image-large.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Demikianlah cara kerja &lt;em&gt;responsive images&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="menampilkan-responsive-images"&gt;Menampilkan &lt;em&gt;responsive images&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;Langkah pertama yang perlu dilakukan adalah mendefinisikan &lt;em&gt;responsive breakpoints&lt;/em&gt; dan membuat standar penamaan &lt;em&gt;image&lt;/em&gt; untuk setiap &lt;em&gt;breakpoint&lt;/em&gt;. &lt;em&gt;Breakpoints&lt;/em&gt; yang saya pakai di tulisan ini adalah:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;320px (smartphone), nama &lt;em&gt;image&lt;/em&gt;: &lt;code&gt;img.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;768px (tablet), nama &lt;em&gt;image&lt;/em&gt;: &lt;code&gt;img-medium.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;1024px (laptop &amp;amp; PC), nama &lt;em&gt;image&lt;/em&gt;: &lt;code&gt;img-large.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Setelah itu cara pemanggilan &lt;em&gt;image&lt;/em&gt; di HTML juga diubah seperti ini:&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="na"&gt;alt=&lt;/span&gt;&lt;span class="s"&gt;"Some alt text"&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"img.jpg"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;       &lt;span class="c"&gt;&amp;lt;!-- Cara standar --&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="na"&gt;alt=&lt;/span&gt;&lt;span class="s"&gt;"Some alt text"&lt;/span&gt; &lt;span class="na"&gt;data-src=&lt;/span&gt;&lt;span class="s"&gt;"img.jpg"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;  &lt;span class="c"&gt;&amp;lt;!-- Responsive images --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Atribut HTML &lt;code&gt;src&lt;/code&gt; diganti dengan atribut HTML5 &lt;code&gt;data-src&lt;/code&gt;. Hal ini diperlukan untuk mencegah &lt;em&gt;browser&lt;/em&gt; mengunduh &lt;em&gt;image&lt;/em&gt; saat memuat situs. Atribut &lt;code&gt;data-src&lt;/code&gt; ini dipakai untuk diakses oleh Javascript (JS).&lt;/p&gt;
+
+&lt;p&gt;Nah sekarang kita membuat &lt;em&gt;script&lt;/em&gt; JS berdasarkan definisi &lt;em&gt;breakpoints&lt;/em&gt; dan &lt;em&gt;markup&lt;/em&gt; di atas. Cara kerja &lt;em&gt;script&lt;/em&gt; ini adalah sebagai berikut:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mendeteksi lebar &lt;em&gt;viewport&lt;/em&gt; gadget&lt;/li&gt;
+  &lt;li&gt;Menentukan &lt;em&gt;breakpoint&lt;/em&gt; gadget (mobile, tablet atau desktop)&lt;/li&gt;
+  &lt;li&gt;Mengambil &lt;em&gt;image path&lt;/em&gt; dari &lt;em&gt;value&lt;/em&gt; &lt;code&gt;data-src&lt;/code&gt; dari &lt;code&gt;img&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Renaming image path&lt;/em&gt; sesuai dengan &lt;em&gt;breakpoint&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Mengeset &lt;em&gt;image path&lt;/em&gt; yang telah di-&lt;em&gt;rename&lt;/em&gt; ke dalam atribut &lt;code&gt;src&lt;/code&gt; di tag &lt;code&gt;img&lt;/code&gt; agar &lt;em&gt;browser&lt;/em&gt; dapat menampilkan &lt;em&gt;image&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Berikut &lt;em&gt;script&lt;/em&gt; JS beserta penjelasannya dalam bentuk &lt;em&gt;comments&lt;/em&gt; (bonus: &lt;em&gt;responsive background images&lt;/em&gt;):&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/cekerholic/f41546e7f9ef9de907f5.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Demikianlah tulisan (tidak terlalu) singkat kali ini. Semoga bermanfaat :)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;small&gt;Suwi ora ngeblog, ngeblog pisan rewangi ra turu&lt;/small&gt;&lt;/em&gt;&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Carpe Diem: Warisan Robin Williams bernama Dead Poets Society</title>
     <link rel="alternate" href="http://jurnal.cekerholic.com/carpe-diem/"/>
     <id>http://jurnal.cekerholic.com/carpe-diem/</id>
     <published>2015-01-31T15:40:00+07:00</published>
-    <updated>2015-05-22T14:07:30+07:00</updated>
+    <updated>2015-06-21T20:49:21+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
     <content type="html">&lt;p&gt;Jika mendengar nama Robin Williams biasanya pikiran saya langsung tertuju ke Dead Poets Society, salah satu film terbaiknya. Bukan berarti film-filmnya yang lain jelek &lt;em&gt;sih&lt;/em&gt;. Jumanji, Night at the Museums dan terakhir The Angriest Man in Brooklyn adalah beberapa film Williams lainnya yang menurut saya juga sangat bagus. Yang lain saya belum nonton &lt;em&gt;sih&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Dia berperan sebagai guru Bahasa Inggris bernama John Keating di sebuah sekolah bernama Weldon Academy dengan setting tahun 1959. Robin Williams mampu menghidupkan karakter Keating dengan sempurna. Guru yang penuh kehangatan, mempunyai rasa humor tinggi dan mampu membangkitkan moral dan semangat murid-muridnya. Selain itu cara mengajarnya pun tidak konvensional, apalagi di masa itu metode pembelajarannya masih tradisional dengan kurikulum yang sangat kaku.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;span&gt;Carpe diem, seize the day, make your lives extraordinary.&lt;/span&gt;
@@ -44,7 +133,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/"/>
     <id>http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/</id>
     <published>2015-01-28T20:23:00+07:00</published>
-    <updated>2015-05-22T14:08:23+07:00</updated>
+    <updated>2015-06-21T20:49:53+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -59,6 +148,8 @@
   &lt;noscript&gt;&lt;img src="https://dl.dropboxusercontent.com/u/13748836/blogpost-img/jurnal/1-28-15/1.jpg" alt="Taman Nasional Gunung Merbabu" /&gt;&lt;/noscript&gt;
   &lt;figcaption&gt;Papan Nama Hutan Lindung&lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Perjalanan ke tempat ini cukup mudah. Dari Muntilan kami melewati jalur Magelang – Boyolali, kemudian sampai di obyek wisata Gardu Pandang Ketep Pass lurus terus sampai menemukan Desa Banyuroto. Desa ini sangat mudah ditemukan karena di pinggir jalan ada gapura besar bertuliskan namanya. Dari situ kami tinggal menelusuri jalan sampai ke ujung desa yang berbatasan langsung dengan hutan.&lt;/p&gt;
 
@@ -89,13 +180,15 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/halo-semuanya/"/>
     <id>http://jurnal.cekerholic.com/halo-semuanya/</id>
     <published>2015-01-27T21:18:00+07:00</published>
-    <updated>2015-01-29T10:00:34+07:00</updated>
+    <updated>2015-06-21T20:50:14+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
     <content type="html">&lt;p&gt;&lt;em&gt;Sugeng rawuh&lt;/em&gt;, selamat datang di blog baru saya. Setelah berhenti ngeblog setahun lebih, akhirnya saya bisa mulai ngeblog lagi. Mudah-mudahan kali ini bisa lebih aktif ngeblognya, nggak labil lagi kayak dulu. Saya memilih untuk memulai dari awal lagi alih-alih meneruskan blog yang lama.&lt;/p&gt;
 
 &lt;p&gt;Blog ini tetap saya &lt;em&gt;host&lt;/em&gt; di Github dan dibuat dengan Middleman, sama seperti yang lama. Sumber kode blog bisa dilihat di &lt;a href="https://github.com/cekerholic/jurnal"&gt;repo github&lt;/a&gt; saya. Harap maklum, blogger fakir, nyewa server aja nggak kuat.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Lalu bagaimana dengan blog lama saya?&lt;/strong&gt;&lt;/p&gt;
 
