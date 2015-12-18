@@ -14,13 +14,13 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/"/>
     <id>http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/</id>
     <published>2015-06-22T01:01:00+07:00</published>
-    <updated>2015-06-22T01:02:00+07:00</updated>
+    <updated>2015-12-18T15:05:45+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
     <content type="html">&lt;p&gt;&lt;em&gt;Sebenarnya pengen membuat judul dalam Bahasa Indonesia tapi kok gimana gitu. Yawdah akhirnya pake &lt;em&gt;English&lt;/em&gt; aja, &lt;em&gt;tur&lt;/em&gt; biar agak keren.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Belakangan ini saya sedang belajar untuk optimisasi performa situs, terutama di &lt;em&gt;mobile&lt;/em&gt;. Hal ini didasari dari pengamatan pribadi saya, banyak sekali situs yang masih belum optimal di &lt;em&gt;mobile&lt;/em&gt;, terutama &lt;em&gt;loading speed&lt;/em&gt;-nya (baca: lemot). Apalagi koneksi internet seluler di Indonesia masih &lt;em&gt;bosok&lt;/em&gt;, sinyal boleh H+ tapi speednya &lt;em&gt;Hajingan+&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Belakangan ini saya sedang belajar untuk optimisasi performa situs, terutama di &lt;em&gt;mobile&lt;/em&gt;. Hal ini didasari dari pengamatan pribadi saya, banyak sekali situs yang masih belum optimal di &lt;em&gt;mobile&lt;/em&gt;, terutama &lt;em&gt;loading speed&lt;/em&gt;-nya (baca: lemot). Apalagi ditambah dengan koneksi internet seluler di Indonesia yang masih &lt;em&gt;bosok&lt;/em&gt;, sinyal boleh H+ tapi speednya &lt;em&gt;Hajingan+&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Kali ini saya akan sedikit berbagi tentang optimisasi &lt;em&gt;images&lt;/em&gt;. Kenapa &lt;em&gt;images&lt;/em&gt;? &lt;em&gt;images&lt;/em&gt; adalah salah satu elemen yang paling banyak memakan &lt;em&gt;bandwith&lt;/em&gt; karena ukuran berkasnya yang relatif besar. Seperti dijelaskan oleh Ilya Grigorik di &lt;a href="https://developers.google.com/web/fundamentals/?hl=en"&gt;Google Web Fundamentals&lt;/a&gt;:&lt;/p&gt;
 
@@ -34,11 +34,9 @@
 
 &lt;h2 id="tentang-responsive-images"&gt;Tentang &lt;em&gt;Responsive Images&lt;/em&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;em&gt;Responsive Images&lt;/em&gt; adalah sebuah teknik untuk menampilkan &lt;em&gt;image&lt;/em&gt; sesuai ukuran &lt;em&gt;viewport&lt;/em&gt;. Jadi situs menyediakan &lt;em&gt;image&lt;/em&gt; dengan beberapa ukuran yang berbeda, lalu menampilkan &lt;em&gt;image&lt;/em&gt; yang sesuai dengan ukuran &lt;em&gt;viewport&lt;/em&gt; dari &lt;em&gt;device&lt;/em&gt; yang mengaksesnya.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Responsive Images&lt;/em&gt; adalah sebuah teknik untuk menampilkan &lt;em&gt;image&lt;/em&gt; sesuai ukuran &lt;em&gt;viewport&lt;/em&gt;. Jadi situs menyediakan &lt;em&gt;image&lt;/em&gt; dengan beberapa ukuran yang berbeda, lalu menampilkan &lt;em&gt;image&lt;/em&gt; yang sesuai dengan ukuran &lt;em&gt;viewport&lt;/em&gt; dari &lt;em&gt;device&lt;/em&gt; yang mengaksesnya. Tujuannya adalah agar &lt;em&gt;image&lt;/em&gt; yang ditampilkan ke user lebih optimal, baik dari segi kualitas maupun ukuran file.&lt;/p&gt;
 
-&lt;p&gt;Teknik ini sebenarnya sudah mulai diproposalkan untuk dijadikan HTML element, yaitu &lt;code&gt;&amp;lt;picture&amp;gt;&lt;/code&gt; element, tetapi statusnya sampai sekarang masih &lt;a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element"&gt;&lt;em&gt;draft&lt;/em&gt;&lt;/a&gt; dan dukungan &lt;a href="http://caniuse.com/#feat=picture"&gt;&lt;em&gt;browser&lt;/em&gt;&lt;/a&gt; pun masih sangat minim. Jadi untuk tulisan ini saya akan menggunakan Javascript untuk membuat &lt;em&gt;responsive images&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Saya akan memberikan sedikit contoh sederhana tentang &lt;em&gt;responsive images&lt;/em&gt;. Misalnya 3 orang user membuka sebuah situs dengan gadget yang berbeda-beda:&lt;/p&gt;
+&lt;p&gt;Saya akan memberikan sedikit contoh sederhana tentang cara kerja &lt;em&gt;responsive images&lt;/em&gt;. Misalnya 3 orang &lt;em&gt;user&lt;/em&gt; membuka sebuah situs dengan gadget yang berbeda-beda:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;User A mengakses situs dari iPhone&lt;/li&gt;
@@ -46,17 +44,19 @@
   &lt;li&gt;User C mengakses situs dari laptop&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Maka situs akan menampilkan &lt;em&gt;image&lt;/em&gt; yang berbeda untuk setiap user:&lt;/p&gt;
+&lt;p&gt;Maka situs akan memuat &lt;em&gt;image&lt;/em&gt; yang sesuai dengan gadget user:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Di gadget User A &lt;em&gt;image&lt;/em&gt; yang dimuat adalah &lt;code&gt;image.jpg&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Di gadget User B &lt;em&gt;image&lt;/em&gt; yang dimuat ukuran &lt;code&gt;image-medium.jpg&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Di gadget User C &lt;em&gt;image&lt;/em&gt; yang dimuat ukuran &lt;code&gt;image-large.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Di gadget User A, dia akan mendapatkan &lt;em&gt;image&lt;/em&gt; yang sudah dioptimalkan untuk &lt;em&gt;smartphone&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Di gadget User B, dia akan mendapatkan &lt;em&gt;image&lt;/em&gt; yang sudah dioptimalkan untuk tablet&lt;/li&gt;
+  &lt;li&gt;Di gadget User C, dia akan mendapatkan &lt;em&gt;image&lt;/em&gt; yang sudah dioptimalkan untuk laptop&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Demikianlah cara kerja &lt;em&gt;responsive images&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2 id="menampilkan-responsive-images"&gt;Menampilkan &lt;em&gt;responsive images&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;Teknik ini sebenarnya sudah mulai diproposalkan untuk dijadikan HTML element, yaitu &lt;code&gt;&amp;lt;picture&amp;gt;&lt;/code&gt; element, tetapi statusnya sampai sekarang masih &lt;a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element"&gt;&lt;em&gt;draft&lt;/em&gt;&lt;/a&gt; dan dukungan &lt;a href="http://caniuse.com/#feat=picture"&gt;&lt;em&gt;browser&lt;/em&gt;&lt;/a&gt; pun masih sangat minim. Jadi untuk tulisan ini saya akan menggunakan Javascript untuk membuat &lt;em&gt;responsive images&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Langkah pertama yang perlu dilakukan adalah mendefinisikan &lt;em&gt;responsive breakpoints&lt;/em&gt; dan membuat standar penamaan &lt;em&gt;image&lt;/em&gt; untuk setiap &lt;em&gt;breakpoint&lt;/em&gt;. &lt;em&gt;Breakpoints&lt;/em&gt; yang saya pakai di tulisan ini adalah:&lt;/p&gt;
 
@@ -88,11 +88,25 @@
 
 &lt;script src="https://gist.github.com/cekerholic/f41546e7f9ef9de907f5.js"&gt;&lt;/script&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sedangkan cara untuk menampilkannya adalah seperti ini:&lt;/p&gt;
+
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="c1"&gt;// Untuk responsive image&lt;/span&gt;
+&lt;span class="nx"&gt;responsiveImg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'nama selektor (class/tag html)'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;// Untuk responsive background&lt;/span&gt;
+&lt;span class="nx"&gt;responsiveBg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'nama selektor (class/tag html)'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="kesimpulan"&gt;Kesimpulan&lt;/h2&gt;
+
+&lt;p&gt;Teknik ini menurut saya cukup sederhana dan sangat bermanfaat untuk meningkatkan kecepatan sebuah situs, apalagi jika situs tersebut memuat banyak &lt;em&gt;images&lt;/em&gt; seperti misalnya blog foto atau toko online. Apalagi jika dikombinasikan dengan teknik optimasi lainnya seperti minifikasi kode dan &lt;em&gt;code concatenation&lt;/em&gt;. Dengan catatan anda harus mau direpotkan untuk menggandakan setiap &lt;em&gt;image&lt;/em&gt; menjadi beberapa buah sesuai &lt;em&gt;viewport points&lt;/em&gt; yang telah didefinisikan (setahu saya biasanya CMS seperti Wordpress sudah otomatis menggandakan dan me-&lt;em&gt;resize&lt;/em&gt; ke beberapa ukuran setiap kali &lt;em&gt;user&lt;/em&gt; mengunggah &lt;em&gt;image&lt;/em&gt;).&lt;/p&gt;
+
 &lt;p&gt;Demikianlah tulisan (tidak terlalu) singkat kali ini. Semoga bermanfaat :)&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;small&gt;Suwi ora ngeblog, ngeblog pisan rewangi ra turu&lt;/small&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;small&gt;Catatan kaki: Diedit pada tanggal 18 Desember 2015&lt;/small&gt;&lt;/em&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -101,7 +115,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/carpe-diem/"/>
     <id>http://jurnal.cekerholic.com/carpe-diem/</id>
     <published>2015-01-31T15:40:00+07:00</published>
-    <updated>2015-06-21T20:49:21+07:00</updated>
+    <updated>2015-12-18T15:05:45+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -133,7 +147,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/"/>
     <id>http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/</id>
     <published>2015-01-28T20:23:00+07:00</published>
-    <updated>2015-06-21T20:49:53+07:00</updated>
+    <updated>2015-12-18T15:05:45+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -180,7 +194,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/halo-semuanya/"/>
     <id>http://jurnal.cekerholic.com/halo-semuanya/</id>
     <published>2015-01-27T21:18:00+07:00</published>
-    <updated>2015-06-21T20:50:14+07:00</updated>
+    <updated>2015-12-18T15:05:45+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
