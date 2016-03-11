@@ -5,22 +5,44 @@
   <id>http://jurnal.cekerholic.com/</id>
   <link href="http://jurnal.cekerholic.com/"/>
   <link href="http://jurnal.cekerholic.com/feed.xml" rel="self"/>
-  <updated>2015-06-22T01:01:00+07:00</updated>
+  <updated>2016-03-11T11:08:00+07:00</updated>
   <author>
     <name>Aris FM</name>
   </author>
+  <entry>
+    <title>One-Click Extensions Manager: Ekstensi Terbaik di Google Chrome</title>
+    <link rel="alternate" href="http://jurnal.cekerholic.com/one-click-extensions-manager-ekstensi-terbaik-di-google-chrome/"/>
+    <id>http://jurnal.cekerholic.com/one-click-extensions-manager-ekstensi-terbaik-di-google-chrome/</id>
+    <published>2016-03-11T11:08:00+07:00</published>
+    <updated>2016-03-11T11:17:54+07:00</updated>
+    <author>
+      <name>Aris FM</name>
+    </author>
+    <content type="html">&lt;p&gt;Salah satu masalah utama dengan &lt;em&gt;browser extensions&lt;/em&gt; adalah seringkali kita tidak membutuhkannya setiap saat. Di peramban Chrome saya saat tulisan ini dibuat terinstall lebih dari 20 ekstensi. Saya membutuhkan semua ekstensi itu, tetapi tidak pernah membutuhkannya di waktu yang bersamaan. Kadang suatu ekstensi hanya saya butuhkan saat sedang men-develop website, kadang ekstensi lain hanya dibutuhkan ketika sedang membaca artikel (pemblokir iklan, translator) dan lain sebagainya.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja"&gt;&lt;strong&gt;One-Click Extensions Manager&lt;/strong&gt;&lt;/a&gt; (saya singkat OCEM) adalah jawaban untuk masalah di atas. OCEM berfungsi untuk mengaktifkan dan menonaktifkan ekstensi secara cepat. Klik tombol OCEM, klik salah satu ekstensi dan ekstensi itu akan nonaktif, begitu pula sebaliknya. Terdengar kontradiktif memang, mengatasi masalah ekstensi dengan ekstensi lainnya. Apalagi Chrome juga sudah punya fitur untuk menonaktifkan ekstensi (klik kanan ikon ekstensi -&amp;gt; kelola ekstensi -&amp;gt; klik checkbox nonaktifkan). Tetapi fitur bawaan Chrome tidaklah sepraktis dan intuitif dibandingkan OCEM.&lt;/p&gt;
+
+&lt;figure class="post__img"&gt;
+  &lt;p&gt;&lt;img src="https://lh4.googleusercontent.com/fP0O51uA5OrRnNK6isWQaITYmlbsnU-UYDnPhHwKfFq0ajtwHIZU8C6BAX1SCvfCqy6vhCriLQ=s640-h400-e365-rw" alt="Tampilan One-Click Extensions Manager" /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Tampilan One-Click Extensions Manager, diambil dari laman Chrome Web Store&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Itulah mengapa saya mengatakan ekstensi ini adalah yang terbaik di Google Chrome.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Responsive Images: Serve Images Based on Viewport Size</title>
     <link rel="alternate" href="http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/"/>
     <id>http://jurnal.cekerholic.com/responsive-images-serve-images-based-on-viewport-size/</id>
     <published>2015-06-22T01:01:00+07:00</published>
-    <updated>2015-12-18T15:05:45+07:00</updated>
+    <updated>2016-03-08T09:33:01+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;em&gt;Sebenarnya pengen membuat judul dalam Bahasa Indonesia tapi kok gimana gitu. Yawdah akhirnya pake &lt;em&gt;English&lt;/em&gt; aja, &lt;em&gt;tur&lt;/em&gt; biar agak keren.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Belakangan ini saya sedang belajar untuk optimisasi performa situs, terutama di &lt;em&gt;mobile&lt;/em&gt;. Hal ini didasari dari pengamatan pribadi saya, banyak sekali situs yang masih belum optimal di &lt;em&gt;mobile&lt;/em&gt;, terutama &lt;em&gt;loading speed&lt;/em&gt;-nya (baca: lemot). Apalagi ditambah dengan koneksi internet seluler di Indonesia yang masih &lt;em&gt;bosok&lt;/em&gt;, sinyal boleh H+ tapi speednya &lt;em&gt;Hajingan+&lt;/em&gt;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Belakangan ini saya sedang belajar untuk optimisasi performa situs, terutama di &lt;em&gt;mobile&lt;/em&gt;. Hal ini didasari dari pengamatan pribadi saya, banyak sekali situs yang masih belum optimal di &lt;em&gt;mobile&lt;/em&gt;, terutama &lt;em&gt;loading speed&lt;/em&gt;-nya (baca: lemot). Apalagi ditambah dengan koneksi internet seluler di Indonesia yang masih &lt;em&gt;bosok&lt;/em&gt;, sinyal boleh H+ tapi speednya &lt;em&gt;Hajingan+&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Kali ini saya akan sedikit berbagi tentang optimisasi &lt;em&gt;images&lt;/em&gt;. Kenapa &lt;em&gt;images&lt;/em&gt;? &lt;em&gt;images&lt;/em&gt; adalah salah satu elemen yang paling banyak memakan &lt;em&gt;bandwith&lt;/em&gt; karena ukuran berkasnya yang relatif besar. Seperti dijelaskan oleh Ilya Grigorik di &lt;a href="https://developers.google.com/web/fundamentals/?hl=en"&gt;Google Web Fundamentals&lt;/a&gt;:&lt;/p&gt;
 
@@ -115,7 +137,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/carpe-diem/"/>
     <id>http://jurnal.cekerholic.com/carpe-diem/</id>
     <published>2015-01-31T15:40:00+07:00</published>
-    <updated>2015-12-18T15:05:45+07:00</updated>
+    <updated>2016-03-08T09:33:37+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
@@ -147,13 +169,15 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/"/>
     <id>http://jurnal.cekerholic.com/menjelajah-hutan-di-taman-nasional-gunung-merbabu/</id>
     <published>2015-01-28T20:23:00+07:00</published>
-    <updated>2015-12-18T15:05:45+07:00</updated>
+    <updated>2016-03-08T09:32:30+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
     <content type="html">&lt;p&gt;Tahun baru 2015 kemarin kebetulan saya lagi flu berat sehingga tidak bisa kemana-kemana. Bahkan pas malam tahun baru saya sudah tidur sejak jam 8 sore. Gak cuma saya sih, teman-teman kantor dan kampung juga banyak yang bernasib  serupa.&lt;/p&gt;
 
 &lt;p&gt;Untungnya beberapa hari kemudian kondisi badan mulai fit, jadi udah bisa main-main lagi. Daripada cuma bengong di rumah karena masih libur kerja, akhirnya saya mengajak teman untuk jalan-jalan. Pengen &lt;em&gt;refreshing&lt;/em&gt; sekaligus menelusuri pelosok Magelang, siapa tahu bisa menemukan tempat bagus yang belum banyak diketahui orang. Siapa tahu juga bisa menemukan &lt;em&gt;jodho&lt;/em&gt; *ngarep*.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Kami memutuskan untuk menuju daerah utara Kabupaten Magelang, menelusuri kaki Gunung Merbabu. Gunung Merbabu memang sangat populer di kalangan pendaki gunung, terutama di Jawa Tengah, karena jalur pendakiannya yang relatif mudah. Tapi kali ini kami kesana bukan untuk mendaki gunung, tetapi menelusuri hutan pinus di Kawasan Konservasi Taman Nasional Gunung Merbabu.&lt;/p&gt;
 
@@ -162,8 +186,6 @@
   &lt;noscript&gt;&lt;img src="https://dl.dropboxusercontent.com/u/13748836/blogpost-img/jurnal/1-28-15/1.jpg" alt="Taman Nasional Gunung Merbabu" /&gt;&lt;/noscript&gt;
   &lt;figcaption&gt;Papan Nama Hutan Lindung&lt;/figcaption&gt;
 &lt;/figure&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Perjalanan ke tempat ini cukup mudah. Dari Muntilan kami melewati jalur Magelang – Boyolali, kemudian sampai di obyek wisata Gardu Pandang Ketep Pass lurus terus sampai menemukan Desa Banyuroto. Desa ini sangat mudah ditemukan karena di pinggir jalan ada gapura besar bertuliskan namanya. Dari situ kami tinggal menelusuri jalan sampai ke ujung desa yang berbatasan langsung dengan hutan.&lt;/p&gt;
 
@@ -194,7 +216,7 @@
     <link rel="alternate" href="http://jurnal.cekerholic.com/halo-semuanya/"/>
     <id>http://jurnal.cekerholic.com/halo-semuanya/</id>
     <published>2015-01-27T21:18:00+07:00</published>
-    <updated>2015-12-18T15:05:45+07:00</updated>
+    <updated>2016-03-08T09:34:50+07:00</updated>
     <author>
       <name>Aris FM</name>
     </author>
