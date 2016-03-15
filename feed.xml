@@ -5,10 +5,33 @@
   <id>http://jurnal.cekerholic.com/</id>
   <link href="http://jurnal.cekerholic.com/"/>
   <link href="http://jurnal.cekerholic.com/feed.xml" rel="self"/>
-  <updated>2016-03-11T11:08:00+07:00</updated>
+  <updated>2016-03-16T01:04:00+07:00</updated>
   <author>
     <name>Aris FM</name>
   </author>
+  <entry>
+    <title>7 Days of “Being”</title>
+    <link rel="alternate" href="http://jurnal.cekerholic.com/7-days-of-being/"/>
+    <id>http://jurnal.cekerholic.com/7-days-of-being/</id>
+    <published>2016-03-16T01:04:00+07:00</published>
+    <updated>2016-03-16T01:16:57+07:00</updated>
+    <author>
+      <name>Aris FM</name>
+    </author>
+    <content type="html">&lt;p&gt;Bacaan menarik tentang Being, sebuah aplikasi yang dibuat dengan memanfaatkan &lt;abbr title="Application Programming Interface"&gt;API&lt;/abbr&gt; dari Instagram. Being meraih kesuksesan dalam sekejap hanya untuk kemudian mati dengan cepat pula ketika Instagram memutus akses API mereka. Mirip seperti kasus Meerkat dengan Twitter.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;span&gt;With Being, we had developed an app that unlocked the power of who you follow, not what you post, to reveal a whole new layer of curation and discovery. My team and I spent 5 months honing the product, until we were finally ready to launch it on Thursday, February 18, 2016. Little did we know, 7 days and 50,000 downloads later, we’d be banned by Instagram.
+&lt;br /&gt;…&lt;br /&gt;
+without notice or explanation, we discovered that our Instagram API access had been revoked, cutting off our access to all Instagram data.
+&lt;br /&gt;…&lt;br /&gt;
+There is always an inherent risk when a developer decides to create a product that is heavily-dependent on the API of a larger company, since that company can (and as history has shown, likely will) discontinue support for the API at some point.&lt;/span&gt;
+&lt;br /&gt;&lt;cite&gt;&lt;strong&gt;Adam Mashaal&lt;/strong&gt;, Founder of Being&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Menurut saya tulisan ini menggambarkan bahwa membuat aplikasi yang bergantung pada aplikasi lain yang lebih besar (Instagram) menawarkan kesuksesan dan risiko yang sama besarnya.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>One-Click Extensions Manager: Ekstensi Terbaik di Google Chrome</title>
     <link rel="alternate" href="http://jurnal.cekerholic.com/one-click-extensions-manager-ekstensi-terbaik-di-google-chrome/"/>
